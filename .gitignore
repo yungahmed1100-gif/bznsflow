@@ -1,0 +1,12 @@
+# Video files (too large for GitHub — add hero-bg.mp4 manually after cloning)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+# Editor folders
+.vscode/settings.json
