@@ -1427,3 +1427,241 @@ img, video {
 html {
   scroll-padding-top: var(--navbar-height);
 }
+
+/* ============================================================
+   LANGUAGE TOGGLE BUTTON
+============================================================ */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  font-family: inherit;
+}
+
+.lang-toggle:hover {
+  background: rgba(79, 142, 247, 0.1);
+  border-color: rgba(79, 142, 247, 0.35);
+  color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.lang-toggle-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.lang-toggle-label {
+  font-family: 'Cairo', 'Inter', sans-serif;
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   ARABIC / RTL MODE
+   Applied when <html> has dir="rtl" and lang="ar"
+============================================================ */
+
+/* Switch to Cairo font for Arabic — beautiful, premium Arabic type */
+[dir="rtl"] body {
+  font-family: 'Cairo', -apple-system, sans-serif;
+}
+
+/* Flip the entire page layout direction */
+[dir="rtl"] .nav-container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-links {
+  flex-direction: row-reverse;
+}
+
+/* Brand — flip the stacking so tagline still reads naturally */
+[dir="rtl"] .nav-brand {
+  text-align: right;
+}
+
+/* Hero content — keep centered, but text aligns right inside */
+[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-badge {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-ctas {
+  flex-direction: row-reverse;
+}
+
+/* Stats row stays centered but reverses order on RTL */
+[dir="rtl"] .hero-stats {
+  flex-direction: row-reverse;
+}
+
+/* Section labels and titles align right */
+[dir="rtl"] .section-label,
+[dir="rtl"] .section-title,
+[dir="rtl"] .section-subtitle {
+  text-align: right;
+}
+
+/* Problem list items — icon should be on the right */
+[dir="rtl"] .problem-list li {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Benefit & use case cards — right-aligned text */
+[dir="rtl"] .benefit-card,
+[dir="rtl"] .use-case-card {
+  text-align: right;
+}
+
+/* Step connector flips to right side in RTL */
+[dir="rtl"] .step {
+  direction: rtl;
+}
+
+[dir="rtl"] .step-connector {
+  left: auto;
+  right: -52px;
+}
+
+/* About section */
+[dir="rtl"] .about-wrapper {
+  direction: rtl;
+}
+
+[dir="rtl"] .about-content {
+  text-align: right;
+}
+
+[dir="rtl"] .about-ctas {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .about-card-detail {
+  text-align: right;
+}
+
+[dir="rtl"] .detail-item {
+  flex-direction: row-reverse;
+}
+
+/* CTA section */
+[dir="rtl"] .cta-wrapper {
+  text-align: right;
+}
+
+[dir="rtl"] .cta-buttons {
+  align-items: flex-end;
+}
+
+/* Footer */
+[dir="rtl"] .footer-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-brand {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-desc {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-social {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-col {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-contact li {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .footer-bottom {
+  flex-direction: row-reverse;
+}
+
+/* Flip the arrow icons inside buttons for RTL */
+[dir="rtl"] .btn svg {
+  transform: scaleX(-1);
+}
+
+/* WhatsApp tooltip flips to the left side in RTL */
+[dir="rtl"] .whatsapp-tooltip {
+  right: auto;
+  left: calc(100% + 14px);
+}
+
+[dir="rtl"] .whatsapp-tooltip::after {
+  left: auto;
+  right: 100%;
+  border-left-color: transparent;
+  border-right-color: rgba(20, 26, 36, 0.95);
+}
+
+/* Mobile nav in RTL — slide in from left instead of right */
+@media (max-width: 768px) {
+  [dir="rtl"] .nav-links {
+    flex-direction: column;
+    transform: translateX(-100%);
+  }
+
+  [dir="rtl"] .nav-links.open {
+    transform: translateX(0);
+  }
+
+  [dir="rtl"] .nav-link {
+    text-align: center;
+  }
+
+  [dir="rtl"] .hero-content {
+    text-align: center;
+  }
+
+  [dir="rtl"] .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  [dir="rtl"] .about-wrapper {
+    direction: rtl;
+  }
+
+  [dir="rtl"] .cta-wrapper {
+    text-align: center;
+  }
+
+  [dir="rtl"] .cta-buttons {
+    align-items: center;
+  }
+
+  [dir="rtl"] .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  [dir="rtl"] .step-connector {
+    right: -36px;
+  }
+}
+
+/* Nav active link indicator in RTL */
+[dir="rtl"] .nav-link.active {
+  color: var(--text-primary);
+}

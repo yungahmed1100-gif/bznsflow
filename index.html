@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Inter for English, Cairo for Arabic (premium Arabic font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -28,7 +29,7 @@
     <div class="nav-container">
       <a href="#hero" class="nav-brand">
         <span class="brand-name">BznsFlow</span>
-        <span class="brand-tagline">for AI solutions</span>
+        <span class="brand-tagline" data-i18n="nav_tagline">for AI solutions</span>
       </a>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -38,13 +39,20 @@
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#problem" class="nav-link">Problem</a></li>
-        <li><a href="#benefits" class="nav-link">Benefits</a></li>
-        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-        <li><a href="#use-cases" class="nav-link">Use Cases</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#problem" class="nav-link" data-i18n="nav_problem">Problem</a></li>
+        <li><a href="#benefits" class="nav-link" data-i18n="nav_benefits">Benefits</a></li>
+        <li><a href="#how-it-works" class="nav-link" data-i18n="nav_how">How It Works</a></li>
+        <li><a href="#use-cases" class="nav-link" data-i18n="nav_cases">Use Cases</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav_about">About</a></li>
         <li>
-          <a href="https://calendar.app.google/PjncJidpLfqP6yFX8" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta">
+          <!-- Language Toggle Button -->
+          <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+            <span class="lang-toggle-icon">🌐</span>
+            <span class="lang-toggle-label" id="langLabel">عربي</span>
+          </button>
+        </li>
+        <li>
+          <a href="https://calendar.app.google/PjncJidpLfqP6yFX8" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta" data-i18n="nav_cta">
             Book a Call
           </a>
         </li>
@@ -56,39 +64,34 @@
        HERO SECTION (Full-Screen Video Background)
   ============================================================ -->
   <section class="hero" id="hero">
-    <!-- Background Video -->
-    <!-- INSTRUCTION: Place your file named "hero-bg.mp4" in the same folder as index.html -->
     <video class="hero-video" autoplay loop muted playsinline>
       <source src="hero-bg.mp4" type="video/mp4" />
     </video>
-
-    <!-- Dark Overlay -->
     <div class="hero-overlay"></div>
 
-    <!-- Hero Content -->
     <div class="hero-content fade-in">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        <span>AI-Powered Business Automation</span>
+        <span data-i18n="hero_badge">AI-Powered Business Automation</span>
       </div>
 
-      <h1 class="hero-headline">
+      <h1 class="hero-headline" data-i18n="hero_headline">
         You're Not Losing Leads<br />
         to Your <span class="gradient-text">Competitors</span>.<br />
         You're Losing Them to<br />
         <span class="gradient-text">Your Own Operations.</span>
       </h1>
 
-      <p class="hero-subheadline">
+      <p class="hero-subheadline" data-i18n="hero_sub">
         Every slow reply, every missed follow-up, every unqualified lead that slips through — that's not a marketing problem. That's an operational failure. BznsFlow deploys intelligent AI systems that engage, qualify, and route leads the moment they appear — before your team even opens their inbox.
       </p>
 
       <div class="hero-ctas">
         <a href="https://calendar.app.google/PjncJidpLfqP6yFX8" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-          Book a Free Strategy Call
+          <span data-i18n="hero_cta_primary">Book a Free Strategy Call</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#how-it-works" class="btn btn-ghost btn-large">
+        <a href="#how-it-works" class="btn btn-ghost btn-large" data-i18n="hero_cta_secondary">
           See How It Works
         </a>
       </div>
@@ -96,22 +99,21 @@
       <div class="hero-stats">
         <div class="stat-item">
           <span class="stat-number">3x</span>
-          <span class="stat-label">Faster Lead Response</span>
+          <span class="stat-label" data-i18n="stat_1">Faster Lead Response</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-number">24/7</span>
-          <span class="stat-label">Automated Engagement</span>
+          <span class="stat-label" data-i18n="stat_2">Automated Engagement</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-number">90%</span>
-          <span class="stat-label">Reduction in Missed Leads</span>
+          <span class="stat-label" data-i18n="stat_3">Reduction in Missed Leads</span>
         </div>
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
     <div class="scroll-indicator">
       <div class="scroll-line"></div>
     </div>
@@ -122,8 +124,8 @@
   ============================================================ -->
   <section class="section" id="problem">
     <div class="container">
-      <div class="section-label fade-in">The Real Problem</div>
-      <h2 class="section-title fade-in">
+      <div class="section-label fade-in" data-i18n="problem_label">The Real Problem</div>
+      <h2 class="section-title fade-in" data-i18n="problem_title">
         Your Marketing Isn't Broken.<br />
         <span class="gradient-text">Your Operations Are.</span>
       </h2>
@@ -133,23 +135,23 @@
           <div class="problem-icon problem-icon--red">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           </div>
-          <h3>The Pain You Know</h3>
+          <h3 data-i18n="pain_title">The Pain You Know</h3>
           <ul class="problem-list">
             <li>
               <span class="list-icon">✕</span>
-              A lead fills out your form at 11 PM. No one responds until morning. They've already booked with a competitor.
+              <span data-i18n="pain_1">A lead fills out your form at 11 PM. No one responds until morning. They've already booked with a competitor.</span>
             </li>
             <li>
               <span class="list-icon">✕</span>
-              Your sales team spends 60% of their time qualifying leads that were never going to convert.
+              <span data-i18n="pain_2">Your sales team spends 60% of their time qualifying leads that were never going to convert.</span>
             </li>
             <li>
               <span class="list-icon">✕</span>
-              High-value inbound requests get buried in a shared inbox, never assigned, never followed up.
+              <span data-i18n="pain_3">High-value inbound requests get buried in a shared inbox, never assigned, never followed up.</span>
             </li>
             <li>
               <span class="list-icon">✕</span>
-              You're paying for ads that generate leads your ops can't handle fast enough to close.
+              <span data-i18n="pain_4">You're paying for ads that generate leads your ops can't handle fast enough to close.</span>
             </li>
           </ul>
         </div>
@@ -164,23 +166,23 @@
           <div class="problem-icon problem-icon--green">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
-          <h3>The BznsFlow Fix</h3>
+          <h3 data-i18n="fix_title">The BznsFlow Fix</h3>
           <ul class="problem-list">
             <li>
               <span class="list-icon list-icon--green">✓</span>
-              Instant AI engagement the moment a lead lands — day or night, weekday or holiday.
+              <span data-i18n="fix_1">Instant AI engagement the moment a lead lands — day or night, weekday or holiday.</span>
             </li>
             <li>
               <span class="list-icon list-icon--green">✓</span>
-              Intelligent qualification flows that filter serious buyers before a human ever gets involved.
+              <span data-i18n="fix_2">Intelligent qualification flows that filter serious buyers before a human ever gets involved.</span>
             </li>
             <li>
               <span class="list-icon list-icon--green">✓</span>
-              Smart routing assigns leads to the right team member based on budget, intent, and geography.
+              <span data-i18n="fix_3">Smart routing assigns leads to the right team member based on budget, intent, and geography.</span>
             </li>
             <li>
               <span class="list-icon list-icon--green">✓</span>
-              Your ad spend finally works as hard as your marketing team intended it to.
+              <span data-i18n="fix_4">Your ad spend finally works as hard as your marketing team intended it to.</span>
             </li>
           </ul>
         </div>
@@ -193,12 +195,12 @@
   ============================================================ -->
   <section class="section section--dark" id="benefits">
     <div class="container">
-      <div class="section-label fade-in">Core Capabilities</div>
-      <h2 class="section-title fade-in">
+      <div class="section-label fade-in" data-i18n="benefits_label">Core Capabilities</div>
+      <h2 class="section-title fade-in" data-i18n="benefits_title">
         Everything Your Pipeline Needs<br />
         <span class="gradient-text">to Stop Leaking Revenue</span>
       </h2>
-      <p class="section-subtitle fade-in">
+      <p class="section-subtitle fade-in" data-i18n="benefits_sub">
         BznsFlow doesn't just add automation — it builds the operational backbone your business was missing.
       </p>
 
@@ -208,48 +210,48 @@
           <div class="benefit-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h3 class="benefit-title">Instant Engagement</h3>
-          <p class="benefit-desc">Respond to every lead in under 60 seconds — automatically. AI-crafted messages that feel personal, not robotic, delivered via WhatsApp, email, or web chat the instant a prospect shows intent.</p>
+          <h3 class="benefit-title" data-i18n="b1_title">Instant Engagement</h3>
+          <p class="benefit-desc" data-i18n="b1_desc">Respond to every lead in under 60 seconds — automatically. AI-crafted messages that feel personal, not robotic, delivered via WhatsApp, email, or web chat the instant a prospect shows intent.</p>
         </div>
 
         <div class="benefit-card fade-in">
           <div class="benefit-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3 class="benefit-title">Auto-Qualification</h3>
-          <p class="benefit-desc">Let AI handle the discovery process. Smart conversation flows identify budget, timeline, and intent — so your sales team only speaks to leads that are genuinely ready to move forward.</p>
+          <h3 class="benefit-title" data-i18n="b2_title">Auto-Qualification</h3>
+          <p class="benefit-desc" data-i18n="b2_desc">Let AI handle the discovery process. Smart conversation flows identify budget, timeline, and intent — so your sales team only speaks to leads that are genuinely ready to move forward.</p>
         </div>
 
         <div class="benefit-card fade-in">
           <div class="benefit-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
           </div>
-          <h3 class="benefit-title">Smart Routing</h3>
-          <p class="benefit-desc">The right lead reaches the right closer at the right moment. BznsFlow routes based on service type, deal size, location, or any custom rule your team defines — zero manual triage required.</p>
+          <h3 class="benefit-title" data-i18n="b3_title">Smart Routing</h3>
+          <p class="benefit-desc" data-i18n="b3_desc">The right lead reaches the right closer at the right moment. BznsFlow routes based on service type, deal size, location, or any custom rule your team defines — zero manual triage required.</p>
         </div>
 
         <div class="benefit-card fade-in">
           <div class="benefit-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <h3 class="benefit-title">Automated Follow-Ups</h3>
-          <p class="benefit-desc">Deals don't die at first contact — they die at the fifth touchpoint that never happened. BznsFlow automates intelligent, timely follow-up sequences that nurture leads through every stage of the funnel.</p>
+          <h3 class="benefit-title" data-i18n="b4_title">Automated Follow-Ups</h3>
+          <p class="benefit-desc" data-i18n="b4_desc">Deals don't die at first contact — they die at the fifth touchpoint that never happened. BznsFlow automates intelligent, timely follow-up sequences that nurture leads through every stage of the funnel.</p>
         </div>
 
         <div class="benefit-card fade-in">
           <div class="benefit-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           </div>
-          <h3 class="benefit-title">Pipeline Visibility</h3>
-          <p class="benefit-desc">Know exactly where every lead is at any moment. Real-time dashboards surface bottlenecks before they become lost deals — giving you the clarity to manage by data, not gut feeling.</p>
+          <h3 class="benefit-title" data-i18n="b5_title">Pipeline Visibility</h3>
+          <p class="benefit-desc" data-i18n="b5_desc">Know exactly where every lead is at any moment. Real-time dashboards surface bottlenecks before they become lost deals — giving you the clarity to manage by data, not gut feeling.</p>
         </div>
 
         <div class="benefit-card fade-in">
           <div class="benefit-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 class="benefit-title">Always-On Reliability</h3>
-          <p class="benefit-desc">Your business doesn't sleep, and neither does BznsFlow. 24/7 automated systems handle peak traffic, off-hours inquiries, and weekend leads — with zero dependency on human availability.</p>
+          <h3 class="benefit-title" data-i18n="b6_title">Always-On Reliability</h3>
+          <p class="benefit-desc" data-i18n="b6_desc">Your business doesn't sleep, and neither does BznsFlow. 24/7 automated systems handle peak traffic, off-hours inquiries, and weekend leads — with zero dependency on human availability.</p>
         </div>
 
       </div>
@@ -261,12 +263,12 @@
   ============================================================ -->
   <section class="section" id="how-it-works">
     <div class="container">
-      <div class="section-label fade-in">The Process</div>
-      <h2 class="section-title fade-in">
+      <div class="section-label fade-in" data-i18n="how_label">The Process</div>
+      <h2 class="section-title fade-in" data-i18n="how_title">
         From Discovery to Deployment<br />
         <span class="gradient-text">in 4 Clean Steps</span>
       </h2>
-      <p class="section-subtitle fade-in">
+      <p class="section-subtitle fade-in" data-i18n="how_sub">
         No lengthy onboarding. No technical complexity on your side. BznsFlow handles the build — you handle the results.
       </p>
 
@@ -276,8 +278,8 @@
           <div class="step-number">01</div>
           <div class="step-content">
             <div class="step-connector"></div>
-            <h3 class="step-title">Strategy & Audit</h3>
-            <p class="step-desc">We begin with a deep-dive into your current lead flow, team structure, and conversion bottlenecks. We identify exactly where leads are slipping through the cracks and what systems need to be built.</p>
+            <h3 class="step-title" data-i18n="step1_title">Strategy & Audit</h3>
+            <p class="step-desc" data-i18n="step1_desc">We begin with a deep-dive into your current lead flow, team structure, and conversion bottlenecks. We identify exactly where leads are slipping through the cracks and what systems need to be built.</p>
           </div>
         </div>
 
@@ -285,8 +287,8 @@
           <div class="step-number">02</div>
           <div class="step-content">
             <div class="step-connector"></div>
-            <h3 class="step-title">System Design</h3>
-            <p class="step-desc">We architect your custom automation stack — conversation flows, qualification logic, routing rules, and integration touchpoints — all mapped to your specific business model and sales process.</p>
+            <h3 class="step-title" data-i18n="step2_title">System Design</h3>
+            <p class="step-desc" data-i18n="step2_desc">We architect your custom automation stack — conversation flows, qualification logic, routing rules, and integration touchpoints — all mapped to your specific business model and sales process.</p>
           </div>
         </div>
 
@@ -294,16 +296,16 @@
           <div class="step-number">03</div>
           <div class="step-content">
             <div class="step-connector"></div>
-            <h3 class="step-title">Build & Integrate</h3>
-            <p class="step-desc">BznsFlow builds and deploys the entire system — AI agents, automation flows, CRM integrations, WhatsApp connections — fully integrated with your existing tools. Zero disruption to your team.</p>
+            <h3 class="step-title" data-i18n="step3_title">Build & Integrate</h3>
+            <p class="step-desc" data-i18n="step3_desc">BznsFlow builds and deploys the entire system — AI agents, automation flows, CRM integrations, WhatsApp connections — fully integrated with your existing tools. Zero disruption to your team.</p>
           </div>
         </div>
 
         <div class="step fade-in">
           <div class="step-number">04</div>
           <div class="step-content">
-            <h3 class="step-title">Launch & Optimize</h3>
-            <p class="step-desc">Go live with full monitoring. We track performance, refine conversation scripts, optimize routing logic, and ensure your system improves continuously — not just on day one.</p>
+            <h3 class="step-title" data-i18n="step4_title">Launch & Optimize</h3>
+            <p class="step-desc" data-i18n="step4_desc">Go live with full monitoring. We track performance, refine conversation scripts, optimize routing logic, and ensure your system improves continuously — not just on day one.</p>
           </div>
         </div>
 
@@ -311,7 +313,7 @@
 
       <div class="steps-cta fade-in">
         <a href="https://calendar.app.google/PjncJidpLfqP6yFX8" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-          Start With a Free Strategy Call
+          <span data-i18n="how_cta">Start With a Free Strategy Call</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -323,12 +325,12 @@
   ============================================================ -->
   <section class="section section--dark" id="use-cases">
     <div class="container">
-      <div class="section-label fade-in">Who It's For</div>
-      <h2 class="section-title fade-in">
+      <div class="section-label fade-in" data-i18n="cases_label">Who It's For</div>
+      <h2 class="section-title fade-in" data-i18n="cases_title">
         Built for Businesses Where<br />
         <span class="gradient-text">Speed to Lead Means Revenue</span>
       </h2>
-      <p class="section-subtitle fade-in">
+      <p class="section-subtitle fade-in" data-i18n="cases_sub">
         If your business generates inbound interest and your team struggles to respond fast enough — BznsFlow was built for you.
       </p>
 
@@ -338,54 +340,54 @@
           <div class="use-case-icon">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
           </div>
-          <h3 class="use-case-title">Digital Agencies</h3>
-          <p class="use-case-desc">Handle high inbound volume from ad campaigns without expanding your team. Qualify discovery calls automatically and route serious clients directly to your account managers.</p>
-          <div class="use-case-tag">Qualify → Book → Close</div>
+          <h3 class="use-case-title" data-i18n="uc1_title">Digital Agencies</h3>
+          <p class="use-case-desc" data-i18n="uc1_desc">Handle high inbound volume from ad campaigns without expanding your team. Qualify discovery calls automatically and route serious clients directly to your account managers.</p>
+          <div class="use-case-tag" data-i18n="uc1_tag">Qualify → Book → Close</div>
         </div>
 
         <div class="use-case-card fade-in">
           <div class="use-case-icon">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
-          <h3 class="use-case-title">Sales Teams</h3>
-          <p class="use-case-desc">Let AI do the heavy lifting on outbound sequences and inbound qualification so your closers spend 100% of their time on deals — not on sorting through unqualified leads.</p>
-          <div class="use-case-tag">More Closes, Less Admin</div>
+          <h3 class="use-case-title" data-i18n="uc2_title">Sales Teams</h3>
+          <p class="use-case-desc" data-i18n="uc2_desc">Let AI do the heavy lifting on outbound sequences and inbound qualification so your closers spend 100% of their time on deals — not on sorting through unqualified leads.</p>
+          <div class="use-case-tag" data-i18n="uc2_tag">More Closes, Less Admin</div>
         </div>
 
         <div class="use-case-card fade-in">
           <div class="use-case-icon">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-          <h3 class="use-case-title">Real Estate</h3>
-          <p class="use-case-desc">Capture and respond to property inquiries 24/7. Automatically segment buyers by budget and location, book site visits, and follow up with listings matched to their criteria.</p>
-          <div class="use-case-tag">Never Miss a Buyer</div>
+          <h3 class="use-case-title" data-i18n="uc3_title">Real Estate</h3>
+          <p class="use-case-desc" data-i18n="uc3_desc">Capture and respond to property inquiries 24/7. Automatically segment buyers by budget and location, book site visits, and follow up with listings matched to their criteria.</p>
+          <div class="use-case-tag" data-i18n="uc3_tag">Never Miss a Buyer</div>
         </div>
 
         <div class="use-case-card fade-in">
           <div class="use-case-icon">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h3 class="use-case-title">SaaS & Tech Companies</h3>
-          <p class="use-case-desc">Automate your entire demo booking pipeline. AI qualifies company size, use case, and budget before connecting prospects with the right sales engineer — no SDR required.</p>
-          <div class="use-case-tag">Demo → Qualified → Closed</div>
+          <h3 class="use-case-title" data-i18n="uc4_title">SaaS & Tech Companies</h3>
+          <p class="use-case-desc" data-i18n="uc4_desc">Automate your entire demo booking pipeline. AI qualifies company size, use case, and budget before connecting prospects with the right sales engineer — no SDR required.</p>
+          <div class="use-case-tag" data-i18n="uc4_tag">Demo → Qualified → Closed</div>
         </div>
 
         <div class="use-case-card fade-in">
           <div class="use-case-icon">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
-          <h3 class="use-case-title">Healthcare & Clinics</h3>
-          <p class="use-case-desc">Automate appointment booking, follow-up reminders, and patient triage. Reduce no-shows, streamline front-desk operations, and ensure every inquiry receives an immediate response.</p>
-          <div class="use-case-tag">Seamless Patient Flow</div>
+          <h3 class="use-case-title" data-i18n="uc5_title">Healthcare & Clinics</h3>
+          <p class="use-case-desc" data-i18n="uc5_desc">Automate appointment booking, follow-up reminders, and patient triage. Reduce no-shows, streamline front-desk operations, and ensure every inquiry receives an immediate response.</p>
+          <div class="use-case-tag" data-i18n="uc5_tag">Seamless Patient Flow</div>
         </div>
 
         <div class="use-case-card fade-in">
           <div class="use-case-icon">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
-          <h3 class="use-case-title">E-Commerce & DTC Brands</h3>
-          <p class="use-case-desc">Recover abandoned carts, automate post-purchase upsells, and handle customer service queries through intelligent AI agents — at a fraction of the cost of a support team.</p>
-          <div class="use-case-tag">Automate the Revenue Cycle</div>
+          <h3 class="use-case-title" data-i18n="uc6_title">E-Commerce & DTC Brands</h3>
+          <p class="use-case-desc" data-i18n="uc6_desc">Recover abandoned carts, automate post-purchase upsells, and handle customer service queries through intelligent AI agents — at a fraction of the cost of a support team.</p>
+          <div class="use-case-tag" data-i18n="uc6_tag">Automate the Revenue Cycle</div>
         </div>
 
       </div>
@@ -410,50 +412,50 @@
               <span class="detail-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </span>
-              <span>Cairo, Egypt</span>
+              <span data-i18n="about_location">Cairo, Egypt</span>
             </div>
             <div class="detail-item">
               <span class="detail-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </span>
-              <span>AI Automation Specialist</span>
+              <span data-i18n="about_role">AI Automation Specialist</span>
             </div>
             <div class="detail-item">
               <span class="detail-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </span>
-              <span>BznsFlow Founder</span>
+              <span data-i18n="about_founder_role">BznsFlow Founder</span>
             </div>
           </div>
         </div>
 
         <div class="about-content fade-in">
-          <div class="section-label">The Founder</div>
-          <h2 class="section-title about-title">
+          <div class="section-label" data-i18n="about_label">The Founder</div>
+          <h2 class="section-title about-title" data-i18n="about_title">
             Ahmed Darwish —<br />
             <span class="gradient-text">Building Systems That Scale</span>
           </h2>
 
           <div class="about-text">
-            <p>
+            <p data-i18n="about_p1">
               BznsFlow was born from a single, frustrating observation: businesses across the Middle East and beyond were spending thousands on marketing — and losing those leads before a human could ever respond. The problem wasn't effort or budget. It was operational infrastructure.
             </p>
-            <p>
+            <p data-i18n="about_p2">
               Ahmed Darwish founded BznsFlow with one mandate: build the AI-powered operational layer that turns marketing spend into predictable, scalable revenue. Based in Cairo and working with clients regionally and globally, BznsFlow has become the trusted automation partner for agencies, sales teams, and growth-oriented businesses who understand that speed-to-lead is a competitive advantage — not a nice-to-have.
             </p>
-            <p>
+            <p data-i18n="about_p3">
               Every system BznsFlow builds is bespoke — designed around your specific pipeline, your team's capacity, and your market's expectations. No off-the-shelf solutions. No template-and-forget setups. Just intelligent automation engineered to perform from day one and improve over time.
             </p>
           </div>
 
           <div class="about-ctas">
             <a href="https://calendar.app.google/PjncJidpLfqP6yFX8" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Book a Call with Ahmed
+              <span data-i18n="about_cta1">Book a Call with Ahmed</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <a href="https://wa.me/201036755930" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-              WhatsApp
+              <span data-i18n="about_cta2">WhatsApp</span>
             </a>
           </div>
         </div>
@@ -468,20 +470,20 @@
     <div class="cta-bg-glow"></div>
     <div class="container">
       <div class="cta-wrapper fade-in">
-        <div class="section-label">Ready When You Are</div>
-        <h2 class="cta-headline">
+        <div class="section-label" data-i18n="cta_label">Ready When You Are</div>
+        <h2 class="cta-headline" data-i18n="cta_title">
           Stop Leaving Revenue<br />
           <span class="gradient-text">on the Table</span>
         </h2>
-        <p class="cta-subtext">
+        <p class="cta-subtext" data-i18n="cta_sub">
           One 30-minute strategy call is all it takes to identify the operational gaps costing you leads right now. No pitch decks. No pressure. Just clarity on what's broken and how to fix it.
         </p>
         <div class="cta-buttons">
           <a href="https://calendar.app.google/PjncJidpLfqP6yFX8" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xlarge">
-            Book Your Free Strategy Call
+            <span data-i18n="cta_btn">Book Your Free Strategy Call</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </a>
-          <p class="cta-note">Free consultation · No commitment · Results-first approach</p>
+          <p class="cta-note" data-i18n="cta_note">Free consultation · No commitment · Results-first approach</p>
         </div>
       </div>
     </div>
@@ -497,9 +499,9 @@
         <div class="footer-brand">
           <a href="#hero" class="nav-brand footer-nav-brand">
             <span class="brand-name">BznsFlow</span>
-            <span class="brand-tagline">for AI solutions</span>
+            <span class="brand-tagline" data-i18n="nav_tagline">for AI solutions</span>
           </a>
-          <p class="footer-desc">
+          <p class="footer-desc" data-i18n="footer_desc">
             AI-powered operational systems that engage, qualify, and route leads so your business stops losing revenue to slow operations.
           </p>
           <div class="footer-social">
@@ -510,33 +512,33 @@
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-heading">Navigation</h4>
+          <h4 class="footer-heading" data-i18n="footer_nav_heading">Navigation</h4>
           <ul class="footer-links">
-            <li><a href="#problem">The Problem</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#use-cases">Use Cases</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#problem" data-i18n="footer_nav_1">The Problem</a></li>
+            <li><a href="#benefits" data-i18n="footer_nav_2">Benefits</a></li>
+            <li><a href="#how-it-works" data-i18n="footer_nav_3">How It Works</a></li>
+            <li><a href="#use-cases" data-i18n="footer_nav_4">Use Cases</a></li>
+            <li><a href="#about" data-i18n="footer_nav_5">About</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-heading">Services</h4>
+          <h4 class="footer-heading" data-i18n="footer_services_heading">Services</h4>
           <ul class="footer-links">
-            <li><a href="#benefits">AI Lead Engagement</a></li>
-            <li><a href="#benefits">Auto-Qualification</a></li>
-            <li><a href="#benefits">Smart Routing</a></li>
-            <li><a href="#benefits">Pipeline Automation</a></li>
-            <li><a href="#benefits">CRM Integration</a></li>
+            <li><a href="#benefits" data-i18n="footer_svc_1">AI Lead Engagement</a></li>
+            <li><a href="#benefits" data-i18n="footer_svc_2">Auto-Qualification</a></li>
+            <li><a href="#benefits" data-i18n="footer_svc_3">Smart Routing</a></li>
+            <li><a href="#benefits" data-i18n="footer_svc_4">Pipeline Automation</a></li>
+            <li><a href="#benefits" data-i18n="footer_svc_5">CRM Integration</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-heading">Contact</h4>
+          <h4 class="footer-heading" data-i18n="footer_contact_heading">Contact</h4>
           <ul class="footer-contact">
             <li>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Cairo, Egypt</span>
+              <span data-i18n="about_location">Cairo, Egypt</span>
             </li>
             <li>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
@@ -544,7 +546,7 @@
             </li>
             <li>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <a href="https://calendar.app.google/PjncJidpLfqP6yFX8" target="_blank" rel="noopener noreferrer">Book a Strategy Call</a>
+              <a href="https://calendar.app.google/PjncJidpLfqP6yFX8" target="_blank" rel="noopener noreferrer" data-i18n="footer_book">Book a Strategy Call</a>
             </li>
           </ul>
         </div>
@@ -552,8 +554,8 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 BznsFlow. All rights reserved. Built for scale. Engineered for results.</p>
-        <p class="footer-founder">Founded by Ahmed Darwish · Cairo, Egypt</p>
+        <p class="footer-copy" data-i18n="footer_copy">&copy; 2025 BznsFlow. All rights reserved. Built for scale. Engineered for results.</p>
+        <p class="footer-founder" data-i18n="footer_founder">Founded by Ahmed Darwish · Cairo, Egypt</p>
       </div>
     </div>
   </footer>
@@ -563,7 +565,7 @@
   ============================================================ -->
   <div class="whatsapp-float" id="whatsappFloat">
     <a href="https://wa.me/201036755930" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-      <div class="whatsapp-tooltip">Chat on WhatsApp</div>
+      <div class="whatsapp-tooltip" data-i18n="wa_tooltip">Chat on WhatsApp</div>
       <div class="whatsapp-icon">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
       </div>
